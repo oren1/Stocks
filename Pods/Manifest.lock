@@ -1,0 +1,34 @@
+PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - RxSwift (5.0.1)
+
+DEPENDENCIES:
+  - Charts (~> 3.4)
+  - Kingfisher (~> 5.12)
+  - NVActivityIndicatorView
+  - RxSwift (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - Kingfisher
+    - NVActivityIndicatorView
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+
+PODFILE CHECKSUM: 3011d66bffa456a0b09a381df1ed14300fa4f789
+
+COCOAPODS: 1.8.4
