@@ -8,14 +8,21 @@
 
 import UIKit
 import NVActivityIndicatorView
+import RxSwift
 
 class CandlesViewController: UIViewController, CandlesViewModelProtocol {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var activityIndicatorView : NVActivityIndicatorView!
-    var viewModel: CandlesViewModel!
+   
+    // For KVO example
+    @objc var viewModel: CandlesViewModel!
+    var viewModelobservation : NSKeyValueObservation!
     
+    // RxSwift example
+    private let disposeBag = DisposeBag()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +36,30 @@ class CandlesViewController: UIViewController, CandlesViewModelProtocol {
         
         self.segmentedControl.addTarget(viewModel, action: #selector(viewModel.segmentedControlChange(_:)), for: .valueChanged)
         
+        
+        
+        // didset example
         self.viewModel.candlesDidChange = {
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
         }
         
        activityIndicatorView = NVActivityIndicatorView(frame: self.view.bounds, type: .lineScale, color: .blue, padding: 160)
 
         viewModel.getCandlesForTimeInterval(interval: "1min")
+        
+        
+        // KVO - Key Value Observation Example
+        viewModelobservation = observe(
+            \.viewModel?.observableCandles,
+            options: [.old, .new]
+        ) { object, change in
+            print("candles updated to: \(change.newValue!)")
+        }
+        
+        
+        // RxSwift observation example
+        setCandlesObserver()
+        
     }
     
     
@@ -100,5 +124,17 @@ extension CandlesViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 175
+    }
+}
+
+extension CandlesViewController {
+    private func setCandlesObserver() {
+        self.viewModel.rxCandles.asObservable()
+          .subscribe(onNext: { candles in
+            print("rxCandles: \(candles)")
+            self.tableView.reloadData()
+
+          })
+          .disposed(by: disposeBag) //3
     }
 }

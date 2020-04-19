@@ -51,7 +51,7 @@ class NetworkManager {
     }
 
     
-    static func getCandlesFor(stock: Stock, and timeInterval: String, completion: @escaping ([Candle]) -> ()) {
+    static func getCandlesFor(stock: Stock, and timeInterval: String, completion: @escaping ([Candle],[ObservableCandle]) -> ()) {
         
         let url = URL(string: "https://www.alphavantage.co/query")!
         
@@ -68,6 +68,7 @@ class NetworkManager {
                     
                     let key = "Time Series (\(timeInterval))"
                     var array : [Candle] = []
+                    var array2 : [ObservableCandle] = []
                     
                     if let candles = dictionary[key] as? [String: Any] {
 
@@ -97,10 +98,11 @@ class NetworkManager {
                                                 close: close!,
                                                 volume: volume!))
                             
+                            array2.append(ObservableCandle(time: String(time), open: open!, high: high!, low: low!, close: close!, volume: volume!))
                         }
                         
                         DispatchQueue.main.async {
-                            completion(array)
+                            completion(array,array2)
                         }
                         
                     }

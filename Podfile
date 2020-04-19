@@ -8,7 +8,8 @@ target 'Stocks' do
   pod 'Kingfisher', '~> 5.12'
   pod 'Charts', '~> 3.4'
   pod 'NVActivityIndicatorView'
-  pod 'RxSwift', '~> 5.0'
+  pod 'RxSwift', '~> 5.0.0'
+  pod 'RxCocoa', '5.0.0'
 
 
   target 'StocksTests' do

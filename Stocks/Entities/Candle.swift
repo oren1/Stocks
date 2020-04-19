@@ -17,3 +17,24 @@ struct Candle {
     var close : String
     var volume : String
 }
+
+class ObservableCandle : NSObject{
+    
+    var time : String
+    var open : String
+    var high : String
+    var low : String
+    var close : String
+    var volume : String
+    
+    init(time : String, open : String, high : String, low : String, close : String, volume : String) {
+        
+        self.time = time
+        self.open = open
+        self.high = high
+        self.low = low
+        self.close = close
+        self.volume = volume
+    }
+    
+}

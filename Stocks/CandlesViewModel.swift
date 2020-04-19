@@ -8,13 +8,15 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxRelay
 
 protocol CandlesViewModelProtocol {
     func showActivityIndicator()
     func hideActivityIndicator()
 }
 
-class CandlesViewModel {
+class CandlesViewModel : NSObject {
    
     var stock: Stock
     var candles: [Candle]! {
@@ -22,6 +24,15 @@ class CandlesViewModel {
             self.candlesDidChange?()
         }
     }
+
+    
+    // Also make it with observable
+    @objc dynamic var observableCandles : [ObservableCandle] = []
+    
+    
+    // Lets implement this with RxSwift
+    let rxCandles: BehaviorRelay<[Candle]> = BehaviorRelay(value: [])
+    
     var candlesDidChange : (() -> ())?
     var reuseIdentifier = "CandleTableViewCell"
     var delegate : CandlesViewModelProtocol?
@@ -52,11 +63,14 @@ class CandlesViewModel {
     func getCandlesForTimeInterval(interval: String) {
 
         self.delegate?.showActivityIndicator()
-        NetworkManager.getCandlesFor(stock: stock, and: interval) { (candles) in
+        NetworkManager.getCandlesFor(stock: stock, and: interval) { (candles, observableCandles) in
+            
             self.candles = candles
+            self.observableCandles = observableCandles
+            self.rxCandles.accept(candles)
             self.delegate?.hideActivityIndicator()
         }
     }
     
-    
+
 }
