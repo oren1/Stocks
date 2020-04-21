@@ -1,5 +1,5 @@
 language: objective-c
 xcode_workspace: Stocks.xcworkspace # path to your xcodeproj folder
 xcode_scheme: Stocks
-xcode_sdk: iphonesimulator11
+xcode_sdk: iPhone 11 Pro Max
 osx_image: xcode11.2
