@@ -101,9 +101,8 @@ class NetworkManager {
                             array2.append(ObservableCandle(time: String(time), open: open!, high: high!, low: low!, close: close!, volume: volume!))
                         }
                         
-                        DispatchQueue.main.async {
                             completion(array,array2)
-                        }
+                        
                         
                     }
                     

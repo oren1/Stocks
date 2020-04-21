@@ -53,7 +53,7 @@ class CandlesViewController: UIViewController, CandlesViewModelProtocol {
             \.viewModel?.observableCandles,
             options: [.old, .new]
         ) { object, change in
-            print("candles updated to: \(change.newValue!)")
+            print("candles updated to: \(String(describing: change.newValue!))")
         }
         
         

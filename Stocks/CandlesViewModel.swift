@@ -65,10 +65,13 @@ class CandlesViewModel : NSObject {
         self.delegate?.showActivityIndicator()
         NetworkManager.getCandlesFor(stock: stock, and: interval) { (candles, observableCandles) in
             
-            self.candles = candles
-            self.observableCandles = observableCandles
-            self.rxCandles.accept(candles)
-            self.delegate?.hideActivityIndicator()
+            DispatchQueue.main.async {
+                self.candles = candles
+                self.observableCandles = observableCandles
+                self.rxCandles.accept(candles)
+                self.delegate?.hideActivityIndicator()
+            }
+
         }
     }
     

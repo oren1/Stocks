@@ -26,6 +26,10 @@
 		6B3F765723CF73CF009AEBE3 /* CandlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3F765623CF73CF009AEBE3 /* CandlesViewModel.swift */; };
 		6B412DEA23D04E03004BACBC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B412DE923D04E03004BACBC /* ChartViewController.swift */; };
 		6B60D71E23CDFB9100F38443 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60D71D23CDFB9100F38443 /* StockCollectionViewCell.swift */; };
+		6B75794B244C20C0000357CC /* ControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75794A244C20C0000357CC /* ControllerViewModelTests.swift */; };
+		6BF22E5C244C2A42008A37FD /* ControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B757944244C177F000357CC /* ControllerViewModel.swift */; };
+		6BF22E5E244C2DE3008A37FD /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF22E5D244C2DE2008A37FD /* NetworkManagerTests.swift */; };
+		6BF22E6E244C4AF6008A37FD /* ViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF22E6D244C4AF6008A37FD /* ViewControllerUITests.swift */; };
 		763FBF0990CD772306D9094D /* Pods_StocksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6A47662CF05745459AE9F /* Pods_StocksTests.framework */; };
 		F93A4808A88AA3F50F3B6E39 /* Pods_Stocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D135477DBB979FB10C888768 /* Pods_Stocks.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +81,10 @@
 		6B3F765623CF73CF009AEBE3 /* CandlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlesViewModel.swift; sourceTree = "<group>"; };
 		6B412DE923D04E03004BACBC /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		6B60D71D23CDFB9100F38443 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B757944244C177F000357CC /* ControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewModel.swift; sourceTree = "<group>"; };
+		6B75794A244C20C0000357CC /* ControllerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewModelTests.swift; sourceTree = "<group>"; };
+		6BF22E5D244C2DE2008A37FD /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		6BF22E6D244C4AF6008A37FD /* ViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUITests.swift; sourceTree = "<group>"; };
 		D135477DBB979FB10C888768 /* Pods_Stocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F3304B79735C72CE4BC05B /* Pods-Stocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stocks.debug.xcconfig"; path = "Target Support Files/Pods-Stocks/Pods-Stocks.debug.xcconfig"; sourceTree = "<group>"; };
 		E3120EE042D2531DE015224B /* Pods_Stocks_StocksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stocks_StocksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +146,7 @@
 			children = (
 				6B1BECEF23CDDDA600195BD3 /* AppDelegate.swift */,
 				6B1BECF123CDDDA600195BD3 /* SceneDelegate.swift */,
+				6B757944244C177F000357CC /* ControllerViewModel.swift */,
 				6B1BECF323CDDDA600195BD3 /* ViewController.swift */,
 				6B3F765623CF73CF009AEBE3 /* CandlesViewModel.swift */,
 				6B3F764F23CF0162009AEBE3 /* CandlesViewController.swift */,
@@ -161,6 +170,8 @@
 			children = (
 				6B1BED0923CDDDB100195BD3 /* StocksTests.swift */,
 				6B1BED0B23CDDDB100195BD3 /* Info.plist */,
+				6B75794A244C20C0000357CC /* ControllerViewModelTests.swift */,
+				6BF22E5D244C2DE2008A37FD /* NetworkManagerTests.swift */,
 			);
 			path = StocksTests;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 			children = (
 				6B1BED1423CDDDB100195BD3 /* StocksUITests.swift */,
 				6B1BED1623CDDDB100195BD3 /* Info.plist */,
+				6BF22E6D244C4AF6008A37FD /* ViewControllerUITests.swift */,
 			);
 			path = StocksUITests;
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF22E5C244C2A42008A37FD /* ControllerViewModel.swift in Sources */,
 				6B3F765323CF01BC009AEBE3 /* CandleTableViewCell.swift in Sources */,
 				6B1BED2623CDDF4A00195BD3 /* Candle.swift in Sources */,
 				6B1BECF423CDDDA600195BD3 /* ViewController.swift in Sources */,
@@ -489,6 +502,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF22E5E244C2DE3008A37FD /* NetworkManagerTests.swift in Sources */,
+				6B75794B244C20C0000357CC /* ControllerViewModelTests.swift in Sources */,
 				6B1BED0A23CDDDB100195BD3 /* StocksTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF22E6E244C4AF6008A37FD /* ViewControllerUITests.swift in Sources */,
 				6B1BED1523CDDDB100195BD3 /* StocksUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
